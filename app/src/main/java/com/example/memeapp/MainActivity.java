@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -117,5 +118,11 @@ public class MainActivity extends AppCompatActivity {
         shareimage.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
         shareimage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(shareimage);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
     }
 }
